@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Lost</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="contactus">Contact Us</string>
+    <string name="aboutapp">About App</string>
+    <string name="navigation_drawer">Navigation Drawer</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="share">Share</string>
+    <string name="faq">FAQ</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dashboard_fragment">Dashbord Fragment</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="settings_fragment">Settings Fragment</string>
+    <string name="aboutapp_fragment">AboutApp Fragment</string>
+    <string name="notifications">Notifications</string>
+    <string name="para1">Life on Streets is an Animal shelter home provider which typically collaborates people who want to help stray animals with shelter home owners so that a community of helpers can be developed.</string>
+    <string name="para2">Animal Shelter is a place where stray, lost, injured and diseased animals can be housed. Many shelter policies allow individuals to bring animals to the shelter, this app unloads this process making it less tedious for user. It provides users with suggestions about the nearby shelter home. The user can get help from administrator by posting questions.</string>
+    <string name="para3">This application is simple and user- friendly not only for user but administrator as well. Sometimes, administrators don’t have an approach to help stray animals but since this application connects users to administrators both sides job can be resolved.</string>
+    <string name="sign_up">Sign up</string>
+</resources>

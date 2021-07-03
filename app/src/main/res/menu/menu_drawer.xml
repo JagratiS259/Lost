@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    :tools="http://schemas.android.com/tools"
+    :showIn="navigation_view">
+
+<group android:checkableBehavior="single">
+<item
+    android:id="@+id/dashboard"
+    android:title="@string/dashboard"
+    android:icon="@drawable/ic_dashboard"/>
+
+
+    <item
+        android:id="@+id/profile"
+        android:title="@string/profile"
+        android:icon="@drawable/ic_profile"/>
+
+
+    <item
+        android:id="@+id/settings"
+        android:title="@string/settings"
+        android:icon="@drawable/ic_settings"/>
+
+    <item
+        android:id="@+id/aboutapp"
+        android:title="@string/aboutapp"
+        android:icon="@drawable/ic_aboutapp"/>
+
+    <item
+        android:id="@+id/faq"
+        android:title="@string/faq"
+        android:icon="@drawable/ic_faq"/>
+
+<item android:title=" ">
+    <menu>
+    <item
+        android:id="@+id/share"
+        android:title="@string/share"
+        android:icon="@drawable/ic_share"/>
+
+        <item
+            android:id="@+id/rateus"
+            android:title="@string/rate_us"
+            android:icon="@drawable/ic_rateus"/>
+
+
+    </menu>
+</item>
+</group>
+    </menu>
