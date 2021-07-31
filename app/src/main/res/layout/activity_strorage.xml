@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:scrollbars="vertical"
+    tools:context=".ActivityStrorage">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/PostUpdate"
+        android:layout_marginTop="16dp"
+        android:text="@string/post_an_update"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/ImageStorage"
+        android:layout_width="match_parent"
+        android:background="@drawable/border"
+        android:layout_height="200dp"
+        android:layout_marginVertical="30dp"
+        android:layout_below="@id/PostUpdate"
+        android:outlineProvider="background"
+        android:clickable="true"
+        android:scaleType="centerCrop" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/AnimalType"
+            android:padding="15dp"
+            android:layout_below="@id/ImageStorage"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Issue"
+        android:padding="15dp"
+        android:layout_below="@id/AnimalType"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Urgency"
+        android:layout_marginBottom="6dp"
+        android:text="@string/how_urgent_is_the_case"
+        android:textSize="16dp"
+        android:layout_below="@id/Issue"/>
+
+    <RadioGroup
+        android:id="@+id/RadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_below="@id/Issue">
+
+        <RadioButton
+        android:id="@+id/VeryUrgent"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textColor="@color/dark_gray"
+        android:text="Very Urgent" />
+
+    <RadioButton
+        android:id="@+id/Urgent"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textColor="@color/dark_gray"
+        android:text="Urgent" />
+
+    <RadioButton
+        android:id="@+id/NotUrgent"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textColor="@color/dark_gray"
+        android:text="Not Urgent" />
+
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/describe"
+        android:layout_below="@id/RadioGroup"
+        android:hint="Describe its condition..."/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RequiredPeople"
+        android:layout_below="@id/describe"
+        android:hint="Required People"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/NearestLandmark"
+        android:layout_below="@id/RequiredPeople"
+        android:hint="Nearest Landmark"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:id="@+id/buttonPost"
+        android:text="Post"
+        android:layout_below="@+id/NearestLandmark"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="56dp"
+        app:shapeAppearanceOverlay="@style/RoundCorner"
+        android:backgroundTint="@color/tint_blue"
+        />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonCam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button"
+            android:layout_below="@id/PostUpdate"
+            android:layout_marginTop="200dp"
+            android:layout_marginStart="250dp"
+            app:backgroundTint="@color/ocean_blue"
+            android:src="@drawable/ic_action_camera" />
+
+    </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

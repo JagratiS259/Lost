@@ -6,13 +6,6 @@
     tools:context=".SettingsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/txtSettings"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp"
-        android:text="@string/settings_fragment"
-        android:textSize="20sp" />
 
     <Switch
         android:id="@+id/switch1"
@@ -21,5 +14,34 @@
         android:layout_marginTop="100dp"
         android:layout_marginLeft="20dp"
         android:text="@string/notifications" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="match_parent"
+        android:layout_below="@id/switch3"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="0dp"
+        android:text="Location" />
+
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_below="@id/switch1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Camera" />
+
+    <Button
+        android:id="@+id/Logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log out"
+        android:layout_below="@id/switch2"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/light_mud"
+        android:layout_marginTop="100dp"/>
 
 </RelativeLayout>

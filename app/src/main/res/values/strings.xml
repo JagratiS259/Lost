@@ -22,4 +22,17 @@
     <string name="para2">Animal Shelter is a place where stray, lost, injured and diseased animals can be housed. Many shelter policies allow individuals to bring animals to the shelter, this app unloads this process making it less tedious for user. It provides users with suggestions about the nearby shelter home. The user can get help from administrator by posting questions.</string>
     <string name="para3">This application is simple and user- friendly not only for user but administrator as well. Sometimes, administrators don’t have an approach to help stray animals but since this application connects users to administrators both sides job can be resolved.</string>
     <string name="sign_up">Sign up</string>
+    <string name="how_urgent_is_the_case">How urgent is the case?</string>
+    <string name="post_an_update">Post an update</string>
+    <string name="button">Button</string>
+    <string-array name="Condition">
+        <item>Exp</item>
+        <item>Injured</item>
+        <item>Abandoned</item>
+        <item>Other</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+    <string name="submit">Submit</string>
+    <string name="hi_how_can_we_help_you">Hi! How can we help you?</string>
+    <string name="my_feeds">My Feeds!</string>
 </resources>

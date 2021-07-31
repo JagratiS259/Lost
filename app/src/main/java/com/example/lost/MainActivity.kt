@@ -1,29 +1,35 @@
 package com.example.lost
 
+import android.content.Intent
+import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
-import android.widget.EditText
 import android.widget.FrameLayout
-import android.widget.ListView
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.lost.*
+import com.example.lost.R
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.database.*
 
 class MainActivity : AppCompatActivity() {
+
 
     lateinit var drawerLayout: DrawerLayout
     lateinit var coordinatorLayout: CoordinatorLayout
     lateinit var toolbar: Toolbar
     lateinit var frameLayout: FrameLayout
     lateinit var navigationView: NavigationView
+    lateinit var fab:FloatingActionButton
+    lateinit var bottomNavigationView: BottomNavigationView
+
 
     var previousMenuItem: MenuItem?=null
 
@@ -34,17 +40,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        drawerLayout=findViewById(R.id.drawerLayout)
-        coordinatorLayout=findViewById(R.id.coordinatorLayout)
-        toolbar=findViewById(R.id.toolbar)
-        frameLayout=findViewById(R.id.frame)
-        navigationView=findViewById(R.id.navigationView)
+        drawerLayout = findViewById(R.id.drawerLayout)
+        coordinatorLayout = findViewById(R.id.coordinatorLayout)
+        toolbar = findViewById(R.id.toolbar)
+        frameLayout = findViewById(R.id.frame)
+        navigationView = findViewById(R.id.navigationView)
+        fab = findViewById(R.id.fab) as FloatingActionButton
+        bottomNavigationView = findViewById(R.id.bottomNavigationView)
+
+        // listViewItems=vi.findViewById(R.id.recyclerDashboard)as ListView
+        fab.setOnClickListener { view ->
+            val intent = Intent(this, ActivityStrorage::class.java)
+            startActivity(intent)
+        }
 
         setUpToolbar()
 
         openDashboard()
 
-        val actionBarDrawerToggle=ActionBarDrawerToggle(
+        val actionBarDrawerToggle = ActionBarDrawerToggle(
             this@MainActivity,
             drawerLayout,
             R.string.open_drawer,
@@ -54,50 +68,79 @@ class MainActivity : AppCompatActivity() {
         actionBarDrawerToggle.syncState()
 
         navigationView.setNavigationItemSelectedListener {
-           if (previousMenuItem!=null){
-               previousMenuItem?.isChecked=false
-           }
-            it.isCheckable=true
-            it.isChecked=true
-            previousMenuItem=it
+            if (previousMenuItem != null) {
+                previousMenuItem?.isChecked = false
+            }
+            it.isCheckable = true
+            it.isChecked = true
+            previousMenuItem = it
 
-            when(it.itemId){
-                R.id.dashboard ->{
+            when (it.itemId) {
+                R.id.dashboard -> {
                     openDashboard()
                     drawerLayout.closeDrawers()
                 }
 
-                R.id.profile ->{
+                R.id.profile -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.frame,ProfileFragment())
+                        .replace(R.id.frame, ProfileFragment())
                         .commit()
-                    supportActionBar?.title="Profile"
+                    supportActionBar?.title = "Profile"
                     drawerLayout.closeDrawers()
                 }
 
 
-                R.id.settings ->{
+                R.id.settings -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.frame,SettingsFragment())
+                        .replace(R.id.frame, SettingsFragment())
                         .commit()
-                    supportActionBar?.title="Settings"
+                    supportActionBar?.title = "Settings"
                     drawerLayout.closeDrawers()
 
-            }
-
-                R.id.aboutapp ->{
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.frame,AboutAppFragment())
-                .commit()
-                    supportActionBar?.title="About App"
-            drawerLayout.closeDrawers()
                 }
+
+                R.id.aboutapp -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame, AboutAppFragment())
+                        .commit()
+                    supportActionBar?.title = "About App"
+                    drawerLayout.closeDrawers()
+                }
+
+                R.id.faq -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame, FaqFragment())
+                        .commit()
+                    supportActionBar?.title = "FAQ"
+                    drawerLayout.closeDrawers()
+                }
+
             }
 
             return@setNavigationItemSelectedListener true
         }
-    }
 
+        bottomNavigationView.setOnNavigationItemReselectedListener {
+            if (previousMenuItem != null) {
+                previousMenuItem?.isChecked = false
+            }
+            it.isCheckable = true
+            it.isChecked = true
+            previousMenuItem = it
+
+            when (it.itemId) {
+                R.id.locate -> {
+                    val intent = Intent(this, MapSearchActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.Help_and_Support -> {
+                    val intent = Intent(this, HelpAndSupport::class.java)
+                    startActivity(intent)
+                }
+                }
+            return@setOnNavigationItemReselectedListener
+            }
+        }
 
     fun setUpToolbar(){
         setSupportActionBar(toolbar)
@@ -115,7 +158,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openDashboard(){
-        val fragment=DashboardFragment()
+        val fragment= DashboardFragment()
         val transaction=supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame,fragment)
         transaction.commit()
@@ -127,7 +170,7 @@ class MainActivity : AppCompatActivity() {
         val frag=supportFragmentManager.findFragmentById(R.id.frame)
         when(frag)
         {
-            !is DashboardFragment->openDashboard()
+            !is DashboardFragment ->openDashboard()
             else->super.onBackPressed()
         }
     }

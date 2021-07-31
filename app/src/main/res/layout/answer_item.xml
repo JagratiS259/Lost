@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="3dp"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/faqLinearLayout"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/HeadingText"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:padding="16dp"
+        android:text="Heading 1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/expandable_layout"
+        android:visibility="visible"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/answerText"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="16dp"
+            android:padding="16dp"
+            android:text="Answer 1" />
+
+    </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/answerText"
+        android:background="@color/light_gray"/>
+
+
+
+</androidx.cardview.widget.CardView>

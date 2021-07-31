@@ -18,7 +18,7 @@ tools:context=".SignUp">
         android:inputType="text"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="190dp"
         android:textSize="15dp" />
 
 <EditText
@@ -44,7 +44,7 @@ tools:context=".SignUp">
     android:textSize="15dp" />
 
     <EditText
-        android:id="@+id/editTextTextAddress"
+        android:id="@+id/editTextAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -54,18 +54,21 @@ tools:context=".SignUp">
         android:textColorHint="@color/white"
         android:textSize="15dp" />
 
-<Button
+<com.google.android.material.button.MaterialButton
     android:id="@+id/btn_signup"
     android:layout_width="match_parent"
     android:layout_height="60dp"
-    android:backgroundTint="#5e9294"
+    android:backgroundTint="@color/ocean_blue"
     android:layout_marginTop="50dp"
     android:text="@string/sign_up"
+    android:textColor="@color/black"
+    app:shapeAppearanceOverlay="@style/RoundCorner"
     android:textSize="18sp" />
 
 
 
 <Button
+    android:id="@+id/alreadyaccount"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:backgroundTint="@color/white"
@@ -77,3 +80,4 @@ tools:context=".SignUp">
 
 
 </LinearLayout>
+

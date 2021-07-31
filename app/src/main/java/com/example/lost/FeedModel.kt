@@ -1,12 +1,8 @@
 package com.example.lost
 
-class FeedModel {
+import android.widget.ImageView
 
-    companion object Factory{
-        fun createList():FeedModel=FeedModel()
-    }
+class FeedModel(val id:String,val description:String, val people:String, val landmark:String)
 
-    var UID:String?=null
-    var itemDataText:String?=null
-    var done: Boolean?=false
-}
+
+

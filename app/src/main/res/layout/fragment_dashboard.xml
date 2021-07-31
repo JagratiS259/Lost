@@ -29,37 +29,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/feeds"
-        android:text="My Feeds!"
+        android:text="@string/my_feeds"
         android:layout_marginTop="280dp"
         android:layout_marginLeft="20dp"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"/>
 
-
-    <ListView
-        android:id="@+id/feed_listview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:nestedScrollingEnabled="true"
-        android:paddingLeft="10dp"
-        android:paddingTop="330dp"
-        android:paddingRight="10dp" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:id="@+id/fab"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="88dp"
-        android:backgroundTint="@color/tint_blue"
-        android:src="@drawable/ic_baseline_add_24"/>
-
-
+.<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerDashboard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/feeds"
+    tools:listitem="@layout/recycler_dashboard_single_row"
+    android:padding="10dp"
+    android:layout_margin="5dp"
+    android:nestedScrollingEnabled="true"/>
 
 
 </RelativeLayout>
